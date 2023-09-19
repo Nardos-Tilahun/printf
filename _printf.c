@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * handle_conv - handle the conversion specifier
  * @format: constant character pointer for format
@@ -10,7 +9,6 @@ int handle_conv(const char *format, va_list print_args)
 {
 	int count = 0, strlength = 0;
 	char temp, *strtemp;
-
 	if (*format == '\0')
 		return (-1);
 	if (*format == 'c')
@@ -19,24 +17,27 @@ int handle_conv(const char *format, va_list print_args)
 		write(1, &temp, 1);
 		count++;
 	}
-	if (*format == 's')
+	else if (*format == 's')
 	{
 		strtemp = va_arg(print_args, char *);
 		for (; *strtemp != '\0' && strtemp != NULL; strlength++, strtemp++)
 			write(1, strtemp, 1);
 		count += strlength;
 	}
+<<<<<<< HEAD
 	if (*format == 'd') {
                 int d = va_arg(args, int);
                 count += printf("%d", d);
 	if (*format == '%')
+=======
+	else if (*format == '%')
+>>>>>>> 78478bf6d6864075612c4521fb7e102e2ef9766a
 	{
 		write(1, format, 1);
 		count++;
 	}
 	return (count);
 }
-
 /**
  * _printf - produce output according to a format
  * @format: constant character pointer for format
@@ -46,7 +47,6 @@ int _printf(const char *format, ...)
 {
 	int count = 0;
 	va_list print_args;
-
 	if (format == NULL)
 		return (-1);
 	va_start(print_args, format);
