@@ -41,8 +41,7 @@ int handle_conv(const char *format, va_list print_args)
  */
 int _printf(const char *format, ...)
 {
-	int count = 0, strlength;
-	char temp, *strtemp;
+	int count = 0;
 	va_list print_args;
 
 	if (format == NULL)
