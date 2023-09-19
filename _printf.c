@@ -9,6 +9,7 @@ int handle_conv(const char *format, va_list print_args)
 {
 	int count = 0, strlength = 0;
 	char temp, *strtemp;
+
 	if (*format == '\0')
 		return (-1);
 	if (*format == 'c')
@@ -40,6 +41,7 @@ int _printf(const char *format, ...)
 {
 	int count = 0;
 	va_list print_args;
+
 	if (format == NULL)
 		return (-1);
 	va_start(print_args, format);
