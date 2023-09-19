@@ -6,7 +6,7 @@
  * @print_args : variadic list of arguments
  * Return: the number of characters printed
  */
-int handle_conv(const char *format, va_list print_args);
+int handle_conv(const char *format, va_list print_args)
 {
 	int count = 0, strlength = 0;
 	char temp, *strtemp;
@@ -22,7 +22,7 @@ int handle_conv(const char *format, va_list print_args);
 	if (*format == 's')
 	{
 		strtemp = va_arg(print_args, char *);
-		for (; strtemp != '\0' && strtemp = NULL; strlength++, strtemp++)
+		for (; *strtemp != '\0' && strtemp != NULL; strlength++, strtemp++)
 			write(1, strtemp, 1);
 		count += strlength;
 	}
