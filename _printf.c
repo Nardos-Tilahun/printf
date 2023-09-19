@@ -3,11 +3,13 @@
 /**
  * handle_conv - handle the conversion specifier
  * @format: constant character pointer for format
+ * @print_args : variadic list of arguments
  * Return: the number of characters printed
  */
 int handle_conv(const char *format, va_list print_args);
 {
-	int count = 0;
+	int count = 0, strlength = 0;
+	char temp, *strtemp;
 
 	if (*format == '\0')
 		return (-1);
@@ -20,9 +22,8 @@ int handle_conv(const char *format, va_list print_args);
 	if (*format == 's')
 	{
 		strtemp = va_arg(print_args, char *);
-		for (; strtemp != '\0'; strlength++)
-			;
-		write(1, strtemp, strlength);
+		for (; strtemp != '\0' && strtemp = NULL; strlength++, strtemp++)
+			write(1, strtemp, 1);
 		count += strlength;
 	}
 	if (*format == '%')
