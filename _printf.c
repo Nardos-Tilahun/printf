@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * handle_conv - handle the conversion specifier
  * @format: constant character pointer for format
@@ -44,7 +43,7 @@ int _printf(const char *format, ...)
 	va_list print_args;
 
 	if (format == NULL)
-		return (-1);
+	i	return (-1);
 	va_start(print_args, format);
 	for (; (*format != '\0'); format++)
 	{
