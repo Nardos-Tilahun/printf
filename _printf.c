@@ -5,7 +5,7 @@
  * @format: constant character pointer for format
  * Return: the number of characters printed
  */
-int handle_conv(const char *format)
+int handle_conv(const char *format, va_list print_args);
 {
 	int count = 0;
 
