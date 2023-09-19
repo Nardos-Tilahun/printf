@@ -26,6 +26,9 @@ int handle_conv(const char *format, va_list print_args)
 			write(1, strtemp, 1);
 		count += strlength;
 	}
+	if (*format == 'd') {
+                int d = va_arg(args, int);
+                count += printf("%d", d);
 	if (*format == '%')
 	{
 		write(1, format, 1);
